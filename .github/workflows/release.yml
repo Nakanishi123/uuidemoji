@@ -1,6 +1,7 @@
 name: Release
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - "v*"
@@ -10,13 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - id: setup-bun
+        name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          fetch-depth: 0
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - run: npx changelogithub
+          bun-version: latest
+      - run: bun install
+      - run: bun run build
+      - run: bun publish
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NPM_CONFIG_TOKEN: ${{ secrets.NODE_TOKEN }}
