@@ -18,7 +18,7 @@ function getEmojiList(text: string): string {
     emojis.push(`"${codePoints.join("")}"`);
   }
   const emojiListString = `export const emojiList = [${emojis.join(",")}];`;
-  const emojiMapString = "export const emojiMap = Object.fromEntries(emojiList.map((emoji) => [emoji, emoji]))";
+  const emojiMapString = "export const emojiMap = Object.fromEntries(emojiList.map((emoji, index) => [emoji, index]));";
   return `${emojiListString}\n${emojiMapString}`;
 }
 
