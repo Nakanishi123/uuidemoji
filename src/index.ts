@@ -1,2 +1,3 @@
-export const one = 1
-export const two = 2
+export { emojiDecode, emojiDecodeSafe, UuidEmojiDecodeError } from "./decode";
+export { emojiEncode, emojiEncodeSafe, UuidEmojiEncodeError } from "./encode";
+export { emoji } from "./generator";
