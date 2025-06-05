@@ -1,7 +1,7 @@
 {
   "name": "uuidemoji",
   "type": "module",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -32,7 +32,7 @@
   "author": "M.Nakanishi",
   "devDependencies": {
     "bun-plugin-dts": "^0.3.0",
-    "@types/bun": "^1.1.10",
-    "@nakanoaas/uuid58": "^0.0.8"
+    "@types/bun": "^1.2.15",
+    "@nakanoaas/uuid58": "^1.0.2"
   }
 }
